@@ -720,10 +720,10 @@ input {
 .section_2,
 .Section_3,
 .Section_4,
-.Section_5 {
+.section_5 {
   display: none;
 }
 
 .section_2 {
-transform:translateY(500)
+  transform: translateY(500);
 }
