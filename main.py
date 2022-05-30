@@ -76,4 +76,14 @@ class Members(db.Model):
 def new_member():
     return render_template('index.html')
 
+@app.route('/2')
+def second_page():
+    return render_template('occupants.html')
+
+@app.route('/3')
+def employment():
+    return render_template('employment_history.html')
+
+
+
 app.run(debug=True)
