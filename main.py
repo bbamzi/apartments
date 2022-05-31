@@ -17,6 +17,7 @@ app.config['SECRET KEY'] = os.environ.get('SECRET_KEY')
 app.secret_key = os.environ.get('APP_SECRET_KEY')
 app.config['SESSION_TYPE'] = 'filesystem'
 db = SQLAlchemy(app)
+
 migrate = Migrate(app,db)
 
 
