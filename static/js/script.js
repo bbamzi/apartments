@@ -10,8 +10,20 @@ const section_5 = document.querySelector(".section_5");
 const proceed_employment = document.querySelector(".proceed_employment");
 const proceed_credit = document.querySelector(".proceed_credit");
 const proceed_submit = document.querySelector(".proceed_submit");
+first_page = document.querySelectorAll(".first_page");
 
-console.log(section_5);
+function checkForm(e) {
+  let valid = true;
+
+  for (input of first_page) {
+    if (input.value.trim() == "") {
+      valid = false;
+
+      break;
+    }
+  }
+  return valid;
+}
 
 const html = `
  <div class="row row-space counter occupants_details" >
@@ -50,8 +62,12 @@ add_more_occupants.addEventListener("click", function (e) {
 });
 
 proceed_dependants.addEventListener("click", function (e) {
-  section_1.style.display = "none";
-  section_2.style.display = "block";
+  if (checkForm(this)) {
+    section_1.style.display = "none";
+    section_2.style.display = "block";
+  } else {
+    alert("Fill all fields");
+  }
 });
 
 proceed_employment.addEventListener("click", (e) => {

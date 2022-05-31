@@ -47,12 +47,16 @@
     <link href="static/css/main.css" rel="stylesheet" media="all" />
   </head>
 
-  <body>
-    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+  <body style="background:url(/static/img/test.jpg) ">
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins background">
+      
       <div class="wrapper wrapper--w680">
+        <!-- <img src="{{ url_for('static', filename='/img/yager.webp')}}" alt=""> -->
         <div class="card card-4">
+          <a href="https://www.yagerrealty.com/"><img src="{{ url_for('static', filename='/img/yager.webp')}}" alt="" width="300" 
+          height="100" ></a>
           <div class="card-body">
-            <form method="POST">
+            <form class="needs-validation"method="POST" action="/">
           
 <section class = "Section_1">
 <h2>
@@ -63,26 +67,27 @@
   <div class="row row-space">
     <div class="col-2">
       <div class="input-group">
-        <label class="label">first name</label>
-        <input class="input--style-4" type="text" name="first_name" />
+        <label class="label required ">first name</label>
+        <input class="input--style-4 first_page" type="text" name="first_name" required/>
       </div>
     </div>
     <div class="col-2">
       <div class="input-group">
-        <label class="label">last name</label>
-        <input class="input--style-4" type="text" name="last_name" />
+        <label class="label ">last name</label>
+        <input class="input--style-4 first_page" type="text" name="last_name" required />
       </div>
     </div>
   </div>
   <div class="row row-space">
     <div class="col-2">
       <div class="input-group">
-        <label class="label">Birthday</label>
+        <label class="label ">Date Of Birth</label>
         <div class="input-group-icon">
           <input
-            class="input--style-4 js-datepicker"
+            class="input--style-4 js-datepicker first_page"
             type="text"
             name="birthday"
+            required
           />
           <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
         </div>
@@ -90,16 +95,16 @@
     </div>
     <div class="col-2">
       <div class="input-group">
-        <label class="label">Gender</label>
+        <label class="label ">Gender</label>
         <div class="p-t-10">
           <label class="radio-container m-r-45"
             >Male
-            <input type="radio" checked="checked" name="gender" />
+            <input type="radio" checked="checked" name="gender" value="Male" />
             <span class="checkmark"></span>
           </label>
           <label class="radio-container"
             >Female
-            <input type="radio" name="gender" />
+            <input type="radio" name="gender" value="Female"/>
             <span class="checkmark"></span>
           </label>
         </div>
@@ -110,13 +115,13 @@
     <div class="col-2">
       <div class="input-group">
         <label class="label">Email</label>
-        <input class="input--style-4" type="email" name="email" />
+        <input class="input--style-4 first_page" type="email" name="email" />
       </div>
     </div>
     <div class="col-2">
       <div class="input-group">
         <label class="label">Phone Number</label>
-        <input class="input--style-4" type="text" name="phone" />
+        <input class="input--style-4 first_page" type="text" name="phone" required/>
       </div>
     </div>
   </div>
@@ -125,62 +130,76 @@
       <div class="input-group">
         <label class="label">Social Security #</label>
         <input
-          for="ssn"
-          id="ssn"
-          class="form__label input--style-4 ssn-number"
-          type="email"
-          name="email"
+
+          class="form__label input--style-4 ssn-number first_page"
+          type="text"
+          name="ssn"
           placeholder="XXX-XX-XXXX"
+          required
         />
       </div>
     </div>
     <div class="col-2">
       <div class="input-group">
         <label class="label">Drivers License #</label>
-        <input class="input--style-4" type="text" name="phone" />
+        <input class="input--style-4 first_page" type="text" name="drivers_license" required/>
+      </div>
+    </div>
+  </div>
+  <div class="row row-space">
+    <div class="col-6">
+      <div class="input-group ">
+        <label class="label">Address</label>
+        <input
+          class="form__label input--style-4 first_page "
+
+          name="address"
+        required/>
+        <!-- <input class="ssn-value" /> -->
       </div>
     </div>
   </div>
   <div class="row row-space">
     <div class="col-6">
       <div class="input-group">
-        <label class="label">Address</label>
-        <input
-          class="form__label input--style-4 ssn-number"
-          type="email"
-          name="address"
-        />
-        <input class="ssn-value" />
-      </div>
-    </div>
-  </div>
-  <div class="row row-space">
-    <div class="col-2">
-      <div class="input-group">
         <label class="label">State</label>
-        <select name="Type" class="input--style-4">
-          <option disabled="disabled" selected="selected">
-            Application Type
+        <select name="application_state" class="input--style-4 first_page" required>
+          <option selected disabled value="">
+
+            State
           </option>
-          <option>Apartment</option>
-          <option>Condo</option>
-          <option>Townhouse Home</option>
+           {% for item in states %}
+          <option>{{ item }}</option>
+          {% endfor %}
+
         </select>
       </div>
     </div>
-    <div class="col-2">
+
+  </div>
+    <div class="row row-space">
+
+     <div class="col-2">
       <div class="input-group">
-        <label class="label">zip code</label>
-        <input class="input--style-4" type="text" name="phone" />
+        <label class="label">city</label>
+        <input class="input--style-4 first_page" type="text" name="city" required/>
       </div>
     </div>
-  </div>
+      <div class="col-6">
+      <div class="input-group">
+         <div class="rs-select2 js-select-simple select--no-search">
+        <label class="label">zip code</label>
+        <input class="input--style-4 first_page" type="text" name="zip_code" />
+      </div>
+        </div>
+    </div>
+      </div>
 
   <div class="input-group">
     <label class="label">Type</label>
     <div class="rs-select2 js-select-simple select--no-search">
-      <select name="Type">
-        <option disabled="disabled" selected="selected">
+      <select name="application_type" class="first_page">
+        <option disabled="disabled" selected="selected" required>
           Application Type
         </option>
         <option>Apartment</option>
@@ -507,7 +526,7 @@
     </div>
     <div class="col-2">
       <div class="input-group">
-        <label class="label">Birthday</label>
+        <label class="label">Today's Date</label>
         <div class="input-group-icon">
           <input
             class="input--style-4 js-datepicker"
@@ -541,4 +560,5 @@
 <script src="static/js/global.js"></script>
 </body>
 </html>
+
 
