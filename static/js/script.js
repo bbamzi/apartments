@@ -11,6 +11,10 @@ const proceed_employment = document.querySelector(".proceed_employment");
 const proceed_credit = document.querySelector(".proceed_credit");
 const proceed_submit = document.querySelector(".proceed_submit");
 first_page = document.querySelectorAll(".first_page");
+const goToFirstPage = document.querySelector(".go_back_page1");
+const goToSecondPage = document.querySelector(".go_back_page2");
+const go_back_page3 = document.querySelector(".go_back_page3");
+const go_back_page4 = document.querySelector(".go_back_page4");
 
 function checkForm(e) {
   let valid = true;
@@ -68,6 +72,8 @@ proceed_dependants.addEventListener("click", function (e) {
   } else {
     alert("Fill all fields");
   }
+  // section_1.style.display = "none";
+  // section_2.style.display = "block";
 });
 
 proceed_employment.addEventListener("click", (e) => {
@@ -83,4 +89,31 @@ proceed_credit.addEventListener("click", (e) => {
 proceed_submit.addEventListener("click", (e) => {
   section_4.style.display = "none";
   section_5.style.display = "block";
+});
+
+goToFirstPage.addEventListener("click", function (e) {
+  e.preventDefault();
+  section_2.style.display = "none";
+  section_1.style.display = "block";
+});
+goToSecondPage.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  section_2.style.display = "block";
+  section_1.style.display = "none";
+  section_3.style.display = "none";
+});
+go_back_page3.addEventListener("click", function (e) {
+  e.preventDefault();
+  section_4.style.display = "none";
+  section_1.style.display = "none";
+  section_3.style.display = "block";
+  section_2.style.display = "none";
+});
+go_back_page4.addEventListener("click", function (e) {
+  e.preventDefault();
+  section_4.style.display = "block";
+  section_1.style.display = "none";
+  section_3.style.display = "none";
+  section_2.style.display = "none";
 });

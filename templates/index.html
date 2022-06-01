@@ -7,12 +7,12 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="description" content="Colorlib Templates" />
-    <meta name="author" content="Colorlib" />
-    <meta name="keywords" content="Colorlib Templates" />
+    <meta name="description" content="MLS Realtors Application" />
+    <meta name="author" content="Mls" />
+    <meta name="keywords" content="MLS" />
 
     <!-- Title Page-->
-    <title>Au Register Forms by Colorlib</title>
+    <title>Application Form</title>
 
     <!-- Icons font CSS-->
     <link
@@ -53,18 +53,18 @@
       <div class="wrapper wrapper--w680">
         <!-- <img src="{{ url_for('static', filename='/img/yager.webp')}}" alt=""> -->
         <div class="card card-4">
-          <a href="https://www.mls.com"><img src="{{ url_for('static', filename='/img/yager.gif')}}" alt="" width="300" 
+          <a href="https://www.mls.com"><img class="mls" src="https://www.mls.com/Content/images/mls_logo.png" alt="" width="300" 
           height="100" ></a>
           <div class="card-body">
             <form class="needs-validation"method="POST" action="/">
           
-<section class = "Section_1">
+<section class = "Section_1" id="Section_1">
 <h2>
-  Applicants Details <span><hr /></span>
+  Applicant's Details <span><hr  class="horizontal_line"/></span>
 </h2>
 
 
-  <div class="row row-space">
+  <div class="row row1 row-space">
     <div class="col-2">
       <div class="input-group">
         <label class="label required ">first name</label>
@@ -115,13 +115,15 @@
     <div class="col-2">
       <div class="input-group">
         <label class="label">Email</label>
-        <input class="input--style-4 first_page" type="email" name="email" />
+        <input class="input--style-4 first_page" type="email" name="email" 
+        />
       </div>
     </div>
     <div class="col-2">
       <div class="input-group">
         <label class="label">Phone Number</label>
-        <input class="input--style-4 first_page" type="text" name="phone" required/>
+        <input class="input--style-4 first_page" type="text" name="phone" required
+        oninput="this.value = this.value.replace(/[^0-9.+]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"/>
       </div>
     </div>
   </div>
@@ -135,14 +137,16 @@
           type="text"
           name="ssn"
           placeholder="XXX-XX-XXXX"
+          oninput="this.value = this.value.replace(/[^0-9.+]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"
+          maxlength="9"
           required
         />
       </div>
     </div>
     <div class="col-2">
       <div class="input-group">
-        <label class="label">Drivers License #</label>
-        <input class="input--style-4 first_page" type="text" name="drivers_license" required/>
+        <label class="label">Drivers License #(optional)</label>
+        <input class="input--style-4 " type="text" name="drivers_license" required/>
       </div>
     </div>
   </div>
@@ -189,7 +193,9 @@
       <div class="input-group">
          <div class="rs-select2 js-select-simple select--no-search">
         <label class="label">zip code</label>
-        <input class="input--style-4 first_page" type="text" name="zip_code" />
+        <input class="input--style-4 first_page" type="text" name="zip_code" 
+        oninput="this.value = this.value.replace(/[^0-9.+]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"
+        />
       </div>
         </div>
     </div>
@@ -225,17 +231,19 @@
 <!-- ######################## next page ######################### -->
 
 <section class = "section_2">
-   <h2>
+  <input type="button" value="← Go back" style="width: 120px; height:20px" class="inputs go_back_page1 ">   
+  <h2>
   Other Occupants :<span><hr /></span>
 </h2>
-<p>Please leave blank and click submit if you will be living alone.</p>
+<p>Please leave blank and proceed to next page if you will be living alone.</p>
 <br />
 <div class="p-t-15">
 <!--  <input class="occupant styled" type="button"/>-->
   <input
-    class="occupant "
+    class="occupant"
     type="button"
     value="Add Occupant"
+
 
   />
 </div>
@@ -276,6 +284,7 @@
 
 
 <section class="Section_3">
+  <input type="button" value="← Go back" style="width: 120px; height:20px" class="inputs go_back_page2 ">   
   <h2>
   Employment History <span><hr /></span>
     <br>
@@ -360,7 +369,7 @@
 
 
 <section class="Section_4">
-
+  <input type="button" value="← Go back" style="width: 120px; height:20px" class="inputs go_back_page3 ">   
    <h2>
  CREDIT HISTORY <span><hr /></span>
 </h2>
@@ -426,7 +435,7 @@
   </section>
 
 <section class="section_5">
-
+  <input type="button" value="← Go back" style="width: 120px; height:20px" class="inputs go_back_page4 ">   
   <h2>
  Submission <span><hr /></span>
 </h2>
