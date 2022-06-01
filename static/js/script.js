@@ -66,14 +66,14 @@ add_more_occupants.addEventListener("click", function (e) {
 });
 
 proceed_dependants.addEventListener("click", function (e) {
-  // if (checkForm(this)) {
-  //   section_1.style.display = "none";
-  //   section_2.style.display = "block";
-  // } else {
-  //   alert("Fill all required fields");
-  // }
-  section_1.style.display = "none";
-  section_2.style.display = "block";
+   if (checkForm(this)) {
+     section_1.style.display = "none";
+     section_2.style.display = "block";
+   } else {
+     alert("Fill all required fields");
+   }
+//  section_1.style.display = "none";
+//  section_2.style.display = "block";
 });
 
 proceed_employment.addEventListener("click", (e) => {
