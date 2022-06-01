@@ -10,8 +10,7 @@ from files import states
 app = Flask(__name__)
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:icui4cu4u@localhost/apartment'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://sninbktfdiehis:1111128bfb80b9a8c4935fda64d84cf79df0bdee0f8a05937515d2fe5bb64a65@ec2-34-227-120-79.compute-1.amazonaws.com:5432/d3tu3cg89r6v10'
-
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
 
 app.config['SECRET KEY'] = os.environ.get('SECRET_KEY')
 app.secret_key = os.environ.get('APP_SECRET_KEY')
