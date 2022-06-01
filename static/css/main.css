@@ -752,6 +752,10 @@ input {
   /* text-align: center; */
   color: rgb(21, 47, 213);
   background-color: #fff;
-  width: 120px;
-  height: 20px;
+}
+
+.required-field::after {
+  content: "*";
+  color: red;
+  margin-left: 2px;
 }

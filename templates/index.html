@@ -62,18 +62,20 @@
 <h2>
   Applicant's Details <span><hr  class="horizontal_line"/></span>
 </h2>
+<p class="horizontal_line">All fields with red asteriks are required </p>
 
 
-  <div class="row row1 row-space">
+
+  <div class="row row1 row-space ">
     <div class="col-2">
       <div class="input-group">
-        <label class="label required ">first name</label>
+        <label class="label required required-field">first name</label>
         <input class="input--style-4 first_page" type="text" name="first_name" required/>
       </div>
     </div>
     <div class="col-2">
       <div class="input-group">
-        <label class="label ">last name</label>
+        <label class="label required-field">last name</label>
         <input class="input--style-4 first_page" type="text" name="last_name" required />
       </div>
     </div>
@@ -81,9 +83,10 @@
   <div class="row row-space">
     <div class="col-2">
       <div class="input-group">
-        <label class="label ">Date Of Birth</label>
+        <label class="label required-field">Date Of Birth</label>
         <div class="input-group-icon">
           <input
+          id="dob"
             class="input--style-4 js-datepicker first_page"
             type="text"
             name="birthday"
@@ -95,7 +98,7 @@
     </div>
     <div class="col-2">
       <div class="input-group">
-        <label class="label ">Gender</label>
+        <label class="label required-field">Gender</label>
         <div class="p-t-10">
           <label class="radio-container m-r-45"
             >Male
@@ -114,14 +117,14 @@
   <div class="row row-space">
     <div class="col-2">
       <div class="input-group">
-        <label class="label">Email</label>
+        <label class="label required-field">Email</label>
         <input class="input--style-4 first_page" type="email" name="email" 
         />
       </div>
     </div>
     <div class="col-2">
       <div class="input-group">
-        <label class="label">Phone Number</label>
+        <label class="label required-field">Phone Number</label>
         <input class="input--style-4 first_page" type="text" name="phone" required
         oninput="this.value = this.value.replace(/[^0-9.+]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"/>
       </div>
@@ -130,7 +133,7 @@
   <div class="row row-space">
     <div class="col-2">
       <div class="input-group">
-        <label class="label">Social Security #</label>
+        <label class="label required-field">Social Security #</label>
         <input
 
           class="form__label input--style-4 ssn-number first_page"
@@ -146,14 +149,14 @@
     <div class="col-2">
       <div class="input-group">
         <label class="label">Drivers License #(optional)</label>
-        <input class="input--style-4 " type="text" name="drivers_license" required/>
+        <input class="input--style-4 " type="text" name="drivers_license" />
       </div>
     </div>
   </div>
   <div class="row row-space">
     <div class="col-6">
       <div class="input-group ">
-        <label class="label">Address</label>
+        <label class="label required-field">Address</label>
         <input
           class="form__label input--style-4 first_page "
 
@@ -166,7 +169,7 @@
   <div class="row row-space">
     <div class="col-6">
       <div class="input-group">
-        <label class="label">State</label>
+        <label class="label required-field">State</label>
         <select name="application_state" class="input--style-4 first_page" required>
           <option selected disabled value="">
 
@@ -185,14 +188,14 @@
 
      <div class="col-2">
       <div class="input-group">
-        <label class="label">city</label>
+        <label class="label required-field">city</label>
         <input class="input--style-4 first_page" type="text" name="city" required/>
       </div>
     </div>
       <div class="col-6">
       <div class="input-group">
          <div class="rs-select2 js-select-simple select--no-search">
-        <label class="label">zip code</label>
+        <label class="label required-field">zip code</label>
         <input class="input--style-4 first_page" type="text" name="zip_code" 
         oninput="this.value = this.value.replace(/[^0-9.+]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"
         />
@@ -202,7 +205,7 @@
       </div>
 
   <div class="input-group">
-    <label class="label">Type</label>
+    <label class="label required-field">Type</label>
     <div class="rs-select2 js-select-simple select--no-search">
       <select name="application_type" class="first_page">
         <option disabled="disabled" selected="selected" required>
@@ -317,7 +320,8 @@
         <label class="label">from</label>
         <div class="input-group-icon">
           <input
-            class="input--style-4 js-datepicker"
+            class="input--style-4 "
+            id="dob"
             type="text"
             name="employment_from"
           />
@@ -381,11 +385,11 @@
           <label class="radio-container m-r-45"
             >Yes
             <input type="radio"  name="bankruptcy" />
-            <span class="checkmark"></span>
+            <span class="checkmark" ></span>
           </label>
           <label class="radio-container"
             >No
-            <input type="radio" checked="checked" name="bankruptcy" />
+            <input type="radio" name="bankruptcy" checked="checked"/>
             <span class="checkmark"></span>
           </label>
         </div>
@@ -447,12 +451,12 @@
     <div class="p-t-10">
       <label class="radio-container m-r-45"
         >Yes
-        <input type="radio"  name="bankruptcy" />
+        <input type="radio"  name="certify" />
         <span class="checkmark"></span>
       </label>
       <label class="radio-container"
         >No
-        <input type="radio" checked="checked" name="bankruptcy" />
+        <input type="radio" checked="checked" name="certify" />
         <span class="checkmark"></span>
       </label>
     </div>
@@ -464,12 +468,12 @@
     <div class="p-t-10">
       <label class="radio-container m-r-45"
         >Yes
-        <input type="radio"  name="evicted" />
+        <input type="radio"  name="described" />
         <span class="checkmark"></span>
       </label>
       <label class="radio-container"
         >No
-        <input type="radio" checked="checked" name="evicted" />
+        <input type="radio" checked="checked" name="described" />
         <span class="checkmark"></span>
       </label>
     </div>
@@ -481,12 +485,12 @@
     <div class="p-t-10">
       <label class="radio-container m-r-45"
         >Yes
-        <input type="radio"  name="late" />
+        <input type="radio"  name="Reporting" />
         <span class="checkmark"></span>
       </label>
       <label class="radio-container"
         >No
-        <input type="radio" checked="checked" name="late" />
+        <input type="radio" checked="checked" name="Reporting" />
         <span class="checkmark"></span>
       </label>
     </div>
@@ -567,6 +571,7 @@
 
 <!-- Main JS-->
 <script src="static/js/global.js"></script>
+<!-- <script>;</script> -->
 </body>
 </html>
 
