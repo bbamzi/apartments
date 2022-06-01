@@ -10,7 +10,7 @@ from files import states
 app = Flask(__name__)
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:icui4cu4u@localhost/apartment'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://dmgdtmrmqgznhg:7272d59f63b94918bde48f05eeb871dbab4c92aab2760646723a62c823a879ac@ec2-54-165-178-178.compute-1.amazonaws.com:5432/da4hplmg8nr1c4'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://zhrcxmkwajhkhp:aaa66e9cef031624c55e27f5a782b47d3b1ee022a888dacb806588fd54e94709@ec2-34-227-120-79.compute-1.amazonaws.com:5432/d5hf4nch9slhka'
 
 
 app.config['SECRET KEY'] = os.environ.get('SECRET_KEY')
@@ -82,5 +82,5 @@ def thank_u():
 
 
 if __name__=='__main__':
-    db.create_all()
+
     app.run(debug=True)
