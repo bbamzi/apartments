@@ -66,35 +66,40 @@ add_more_occupants.addEventListener("click", function (e) {
 });
 
 proceed_dependants.addEventListener("click", function (e) {
-   if (checkForm(this)) {
-     section_1.style.display = "none";
-     section_2.style.display = "block";
-   } else {
-     alert("Fill all required fields");
-   }
-//  section_1.style.display = "none";
-//  section_2.style.display = "block";
+//   if (checkForm(this)) {
+//     section_1.style.display = "none";
+//     section_2.style.display = "block";
+//
+//   } else {
+//     alert("Fill all required fields");
+//   }
+  section_1.style.display = "none";
+  section_2.style.display = "block";
 });
 
 proceed_employment.addEventListener("click", (e) => {
   section_2.style.display = "none";
   section_3.style.display = "block";
+   section_3.style.opacity = 1;
 });
 
 proceed_credit.addEventListener("click", (e) => {
   section_3.style.display = "none";
   section_4.style.display = "block";
+   section_4.style.opacity = 1;
 });
 
 proceed_submit.addEventListener("click", (e) => {
   section_4.style.display = "none";
   section_5.style.display = "block";
+   section_5.style.opacity = 1;
 });
 
 goToFirstPage.addEventListener("click", function (e) {
   e.preventDefault();
   section_2.style.display = "none";
   section_1.style.display = "block";
+   section_2.style.opacity = 1;
 });
 goToSecondPage.addEventListener("click", function (e) {
   e.preventDefault();
